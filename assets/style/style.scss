@@ -1,0 +1,394 @@
+/* 
+
+
+
+*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    
+}
+
+
+
+ /* ************** header css ********* */ 
+.header-area{
+    background-color: #050536;
+    height: 95px;
+    display: flex;
+align-items: center;
+
+    .container{
+        .row{
+            nav{
+                padding: 0;
+                display: flex;
+                align-items: center;                
+                justify-content: center;
+                height: 100%;
+
+                .logo-area{
+                    width: 20%;
+                    display: flex;
+                    justify-content: space-between;                    
+                    align-items: center;
+                    height: 100%;
+
+                   .toggle-box{
+                       width: 35px;
+                       height: 35px;
+                    //    background-color: orange;
+                       position: relative;
+                       display: none;
+                       .item-box{
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        transition: all .4s im !important;
+                        overflow: hidden;
+
+                           .toggle-one{
+                                width: 100%;
+                                height: 4px;
+                                background-color: #fff;
+                                display: block;
+                                position: relative;
+                                margin-top: 10px;
+                                transition: .4s;                              
+                               transition: .4s;
+                           }
+                           .toggle-tow{
+                            transition: .4s;       
+                            position: absolute;
+                            top: 0px;
+                            left: 0;
+                            width: 100%;
+                            height: 4px;
+                            background-color: #fff;
+                            display: block;
+                        }
+                        .toggle-three{
+                             transition: .4s;       
+                            position: absolute;
+                            top: 20px;
+                            left: 0;
+                            width: 100%;
+                            height: 4px;
+                            background-color: #fff;
+                            display: block;
+                        }
+                       }
+                       .show-toggle{
+
+                        .toggle-one{
+                            transform: translateX(-100px);
+                            opacity: 0;
+                            background-color: red;
+                        }
+                        .toggle-tow{                                  
+                            
+                            top: 10px;
+                            transform: rotate(130deg);
+                            background-color: red;
+                           
+                        }
+
+                        .toggle-three{
+                            top: 10px;
+                            transform: rotate(-130deg);
+                            background-color: red;
+                        }
+
+                       }
+                   }
+                   
+                }
+                .main-menu{
+                    width: 80%;
+                    text-align: center;
+                    margin-bottom: 0;
+                    .nav-item{
+                        list-style: none;
+                        display: inline-block;
+                        
+                        .nav-link{
+                            font-size: 22px;
+                            font-weight: 600;
+                            color: #fff;
+                        }
+                    }
+
+                    .dropdown{
+                        position: relative;                        
+                            &::after{
+                                position: absolute;
+                                font-family: "Font Awesome 5 Free";
+                                 font-weight: 900; 
+                                 content: "\f078";
+                                 font-size: 15px;
+                                 margin-left: 5px;       
+                                 color: #fff; 
+                                 right: -5px;      
+                                 top: 15px;     
+                                 cursor: pointer;     
+                                 transition: all .3s;    
+                        }
+
+                        .submenu{
+                            position: absolute;
+                            top: 100%;
+                            left: 0;
+                            min-width: 220px;
+                            min-height: 180px;
+                            background: #f3f3f3;
+                            padding:  0 20px;
+                            text-align: initial;
+                            display: none;
+                            animation: growDown .4s ease-in-out ;
+                            transform-origin:top ;
+                            .nav-item{
+                                display: block;
+                                margin: 0;
+                                padding: 0;
+
+                                .nav-link{
+                                    padding: 0;
+                                    margin: 0;
+                                    color: black;
+                                }
+                            }
+                           
+                            
+                            .dropdown{
+
+                                &::after{
+                                    color: #000000;
+
+                                }
+                                &:hover{
+
+                                    &::after{
+                                        transform: rotate(-90deg);
+    
+                                    }
+                                }
+                                
+
+
+                                .submenu{
+                                    left: 105%;
+                                    top: 0;
+                                    display: none;
+                                    
+
+
+                                    .dropdown{
+
+                                        .submenu{
+                                            left: 102%;
+                                    top: 0;
+                                    display: none;
+                                        }
+                                        &:hover{
+                                            .submenu{
+                                                display: block;
+                                            }
+                                        }
+
+                                    }
+
+                                }
+
+                                &:hover{
+                                    .submenu{
+                                        display: block;
+                                    }
+                                }
+
+
+                            }
+
+
+
+                    }
+
+
+                    &:hover{
+                        .submenu{
+                            display: block;
+                        }
+
+                        &::after{
+                            transform: rotate(180deg);
+                            
+                        }
+                    }
+
+                    @keyframes growDown {
+                        0% {
+                            transform: scaleY(0)
+                        }
+                        80% {
+                            transform: scaleY(1.1)
+                        }
+                        100% {
+                            transform: scaleY(1)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+}
+
+
+@media only screen and (max-width: 768px) and (min-width:0px)  {
+
+    .header-area{
+
+display: flex;
+align-items: center;
+
+
+        .container{
+           max-width: 93%;
+
+            .row{
+
+                nav{
+
+                    
+                    .logo-area{
+                        width: 100%;
+
+                        .toggle-box{
+                            display: block;
+                            font-size: 35px;
+                        }
+                        img{
+                            max-width: 60%;
+                        }
+
+
+
+
+
+
+                    }
+
+                    .main-menu{
+                        
+                        .remove-icon{
+                            text-align: right;
+                            display: block !important;
+                            padding: 17px 22px;
+                            transition: .3s;
+                            
+                            i{
+                                font-size: 30px;
+                                transition: .4s;
+                                color: #fff;
+                                &:hover{
+                                    color: red;
+                                }
+                            }
+            
+                            
+                        }
+                        overflow: scroll;
+                        padding-left: 0;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 270px;
+                        height: 100vh;
+                        background-color: rgb(12, 0, 122);
+                        transition: all .3s !important;
+                        visibility: hidden;
+                        opacity: 0;
+                        transform: scaleX(0);
+                        transform-origin: left;
+
+
+                        .nav-item{
+                            display: block;
+                            margin: 0;
+                            padding: 0;
+                            text-align: left;
+
+                            .nav-link{
+                                padding: 4px 13px;
+                            }
+                        }
+
+                        .dropdown{
+                            &::after{
+                                right: 20px;
+                                transition: .4s;
+                            }
+                           
+
+                            .submenu{
+
+                                position: relative;
+
+                                .dropdown{
+                                    &:hover{
+                                        &::after{
+                                            transform: rotate(360deg);
+                                        }
+                                    }
+
+                                    .submenu{
+                                        left: 0;
+                                        padding: 0;
+                                        
+
+                                        .dropdown{
+                                            .submenu{
+                                                left: 0;
+                                                padding: 0;
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .main-menu-show{
+
+                        transform: scaleX(1);
+                        visibility: visible;
+                        opacity: 1;
+
+                    }
+
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+}
+
+
